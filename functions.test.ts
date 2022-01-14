@@ -1,18 +1,17 @@
 const {shuffleArray} = require('./utils')
 
+let arr = [0, 1, 2, 3, 4, 5]
+
 describe('shuffleArray should', () => {
-    test('array should contain crowbar & the hammer ', () => {
-        expect(shuffleArray).toEqual(
-            expect.arrayContaining([
-                expect.objectContaining({name: 'The Hammer'}),
-                expect.objectContaining({name: 'crowbar'})
-            ])
+    test('be the same length', () => {
+        expect(shuffleArray(arr).length).toEqual(
+            arr.length
         )
     })
 })
 
 describe('shuffleArray should', () => {
-    test('should be type array', () => {
-        expect(typeof shuffleArray).toBe('array')
-    })
+    test('be type array', () => {
+        expect(Array.isArray(shuffleArray(arr))).toBe(true)
+    });
 })

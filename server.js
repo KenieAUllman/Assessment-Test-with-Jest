@@ -4,6 +4,15 @@ const app = express();
 const {bots, playerRecord} = require('./data')
 const {shuffleArray} = require('./utils')
 
+var Rollbar = require('rollbar');
+var rollbar = new Rollbar({
+  accessToken: '44d7d5af072542a2a5dff391e6597322',
+  captureUncaught: true,
+  captureUnhandledRejections: true
+});
+rollbar.log('Hello World')
+rollbar.log()
+
 app.use(express.json())
 app.use(express.static('public'))
 
